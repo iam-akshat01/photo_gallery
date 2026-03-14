@@ -1,16 +1,128 @@
-# React + Vite
+# 📸 Photo Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Photo Gallery web application built using **React** and **Vite**.  
+The application fetches photos from an external API, displays them in a responsive grid layout, allows users to search photos, and mark photos as favorites.
 
-Currently, two official plugins are available:
+Favorites are persisted using **localStorage**, so they remain saved even after refreshing the page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Fetch photos from an external API
+- Responsive photo gallery grid
+- Search photos by **author name or photo ID**
+- Mark and unmark photos as **favorites**
+- Favorites persist using **localStorage**
+- Loading indicator while fetching photos
+- Error handling for failed API requests
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 React Concepts Used
+
+### Custom Hook
+`useFetchPhotos`
+
+Handles API calls and manages loading and error states.
+
+### useMemo
+Used to optimize photo filtering when searching.
+
+### useReducer
+Manages the favorites state using action-based updates.
+
+### useCallback
+Prevents unnecessary re-creation of the favorite toggle function.
+
+### useEffect
+Persists favorites to **localStorage** whenever the state changes.
+
+---
+
+## 📂 Project Structure
+
+```
+photo_gallery
+│
+├── public
+│   └── icon.png
+│
+├── src
+│   ├── assets
+│   │   └── searchicon.png
+│   │
+│   ├── components
+│   │   ├── CreateGallery.jsx
+│   │   └── PhotoCard.jsx
+│   │
+│   ├── hooks
+│   │   └── useFetchPhotos.js
+│   │
+│   ├── reducer
+│   │   └── favoritesReducer.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+```
+
+---
+
+## ⚙️ Installation and Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/iam-akshat01/photo_gallery.git
+cd photo_gallery
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+The application will start at:
+
+```
+http://localhost:5173
+```
+
+---
+
+
+## 🛠 Technologies Used
+
+- React
+- Vite
+- Tailwind CSS
+- JavaScript (ES6+)
+- LocalStorage
+
+---
+
+## 👨‍💻 Author
+
+**Akshat Mani Tripathi**
+
+GitHub:  
+https://github.com/iam-akshat01
+
+Repo Link:
+https://github.com/iam-akshat01/photo_gallery
